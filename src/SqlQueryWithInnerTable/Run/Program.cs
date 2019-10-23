@@ -1,4 +1,6 @@
-﻿namespace SqlQueryWithInnerTable
+﻿using SqlQueryWithInnerTable;
+
+namespace Run
 {
     class Program
     {

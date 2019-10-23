@@ -48,7 +48,7 @@ CREATE CLUSTERED INDEX ix_{tempTableName} ON #{tempTableName} ([Id]);
 
             for (int i = 0; i < pages; i++)
             {
-                stringBuilder.AppendLine($"INSERT INTO #{tempTableName} VALUES {string.Join(',', ids.Skip(i * splitSize).Take(splitSize).Select(s => $"({s.ToString()})").ToArray())};");
+                stringBuilder.AppendLine($"INSERT INTO #{tempTableName} VALUES {string.Join(",", ids.Skip(i * splitSize).Take(splitSize).Select(s => $"({s.ToString()})").ToArray())};");
             }
 
             return stringBuilder.ToString();
